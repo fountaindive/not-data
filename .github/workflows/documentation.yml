@@ -41,7 +41,7 @@ jobs:
           external_repository: fountaindive/not-data-docs
           #publish_branch: gh-pages
           publish_branch: main
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: docs
           force_orphan: true
 
