@@ -25,14 +25,21 @@ jobs:
           echo `pwd`
           echo "***********************************"
           echo "***********************************"
+          echo "cd ../../"
           cd ../../
+          echo "***********************************"
+          echo `pwd`
+          echo "***********************************"
           ls *
           echo "***********************************"
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
         with:
-          publish_branch: gh-pages
+          external_repository: fountaindive/not-data-docs
+          #publish_branch: gh-pages
+          publish_branch: main
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: docs
           force_orphan: true
+
