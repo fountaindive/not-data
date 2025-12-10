@@ -20,6 +20,7 @@ jobs:
           echo `pwd`
           echo "***********************************"
           cd packages/pkg1 && sphinx-build -M html docs/source docs/build
+          mv docs/build ../../docs
           echo "***********************************"
           echo `pwd`
           echo "***********************************"
@@ -29,5 +30,5 @@ jobs:
         with:
           publish_branch: gh-pages
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: docs/build/
+          publish_dir: docs
           force_orphan: true
