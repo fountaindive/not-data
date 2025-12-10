@@ -20,19 +20,21 @@ jobs:
           echo "***********************************"
           echo `pwd`
           echo "***********************************"
-          cd packages/pkg1 && sphinx-build -M html docs/source docs/build
-          mv docs/build/html ../../docs
-          echo "***********************************"
-          echo `pwd`
-          echo "***********************************"
-          echo "***********************************"
-          echo "cd ../../"
-          cd ../../
-          echo "***********************************"
-          echo `pwd`
-          echo "***********************************"
-          ls *
-          echo "***********************************"
+
+
+          echo "definine date directory"
+          DATE_DIR=`date +%d%m%Y.%H%M%S`
+          echo "DATE_DIR is ${DATE_DIR}"
+
+          echo "making docs/pkg1/${DATE_DIR}"
+          mkdir -p docs/pkg1/${DATE_DIR}
+
+          echo "building docs"
+          cd packages/pkg1 && sphinx-build -M html docs/source ${DATE_DIR}
+
+          echo "moving docs to output"
+          mv ${DATE_DIR}/html ../../docs/pkg1/DATE_DIR
+          
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
