@@ -26,14 +26,14 @@ jobs:
           DATE_DIR=`date +%d%m%Y.%H%M%S`
           echo "DATE_DIR is ${DATE_DIR}"
 
-          echo "making docs/pkg1/${DATE_DIR}"
-          mkdir -p docs/pkg1/${DATE_DIR}
+          echo "making docs/docs/pkg1/${DATE_DIR}"
+          mkdir -p docs/docs/pkg1/${DATE_DIR}
 
           echo "building docs"
           cd packages/pkg1 && sphinx-build -M html docs/source ${DATE_DIR}
 
           echo "moving docs to output"
-          mv ${DATE_DIR}/html ../../docs/pkg1/${DATE_DIR}
+          mv ${DATE_DIR}/html/* ../../docs/docs/pkg1/${DATE_DIR}
           
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
