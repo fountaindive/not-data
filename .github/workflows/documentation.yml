@@ -45,6 +45,7 @@ jobs:
           publish_branch: main
           # github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: docs
+          # force_orphan and keep_files not working together? https://github.com/peaceiris/actions-gh-pages?tab=readme-ov-file#%EF%B8%8F-keeping-existing-files-keep_files
           # force_orphan: true
           keep_files: true
 
