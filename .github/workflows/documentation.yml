@@ -20,7 +20,7 @@ jobs:
           echo `pwd`
           echo "***********************************"
           cd packages/pkg1 && sphinx-build -M html docs/source docs/build
-          mv docs/build ../../docs
+          mv docs/build/html ../../docs
           echo "***********************************"
           echo `pwd`
           echo "***********************************"
