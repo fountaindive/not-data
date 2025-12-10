@@ -1,0 +1,12 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = ["setuptools"]
+
+[project]
+
+description = "lallal"
+version = "0.0.1"
+name = "pkg2"
+readme = "README.md"
+requires-python = "~=3.12"
+
