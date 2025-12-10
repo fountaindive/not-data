@@ -33,7 +33,7 @@ jobs:
           cd packages/pkg1 && sphinx-build -M html docs/source ${DATE_DIR}
 
           echo "moving docs to output"
-          mv ${DATE_DIR}/html ../../docs/pkg1/DATE_DIR
+          mv ${DATE_DIR}/html ../../docs/pkg1/${DATE_DIR}
           
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
